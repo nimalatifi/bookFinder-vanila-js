@@ -26,7 +26,7 @@
             bookImage.setAttribute('src', item.volumeInfo.imageLinks!= null ? item.volumeInfo.imageLinks.thumbnail : "./img/no-image.png");
             bookTitle.innerHTML = item.volumeInfo.title!= null && item.volumeInfo.title.length ? item.volumeInfo.title : "no-Tile";
             bookAuthor.innerText = item.volumeInfo.authors!= null && item.volumeInfo.authors.length ? item.volumeInfo.authors[0] : "no-author";
-            bookPageCount.innerHTML = item.volumeInfo.pageCount!= null && item.volumeInfo.pageCount.length ? item.volumeInfo.pageCount : "#0";
+            bookPageCount.innerHTML = item.volumeInfo.pageCount!= null ? item.volumeInfo.pageCount : "#0";
 
             /***  push bookCard in array  ***/
             bookDetailsDiv.append(bookAuthor, bookPageCount);
