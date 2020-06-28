@@ -1,0 +1,211 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 950px;
+    margin: 0 auto;
+    background: #eee;
+}
+header {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    color: #191816;
+    font-weight: 300;
+}
+.search-area{
+    display: flex;
+    width: 100%;
+    padding: 1% 0;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:center;
+    -webkit-box-shadow: 0 2px 4px 0 hsla(0,0%,44.3%,.05);
+    box-shadow: 0 2px 4px 0 hsla(0,0%,44.3%,.05);
+    -webkit-box-shadow: 0 2px 4px 0 hsla(0,0%,44.3%,.05);
+    box-shadow: 0 2px 4px 0 hsla(0,0%,44.3%,.05);
+    -webkit-box-shadow: rgba(0,0,0,.04) 0 7px 8px 0;
+    box-shadow: 0 7px 8px 0 rgba(0,0,0,.04);
+    
+    background: #fff;
+}
+.search-input-container{ 
+    display: flex;
+    flex-grow: 1;
+    justify-content:center;
+}
+.search-input{
+    justify-content: center;
+    background: #eeeeee;
+    border: 1px solid #aaa;
+    color: #000000;
+    height: 30px;
+    line-height: 30px;
+    font-size: 17px;
+    min-width: 25%;
+    border-radius: 3px;
+}
+.search-btn{
+    margin-left: 10px;
+    min-width: 7%;
+}
+.loader-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #19181620;
+}
+.main-area{
+    display: flex;
+    width: 70%;
+    margin: 3% auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.03);
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    min-height:700px;
+    position:relative;
+}
+
+.result-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.msg-container{
+    display: flex;
+    flex-direction: row;
+    font-size: larger;
+}
+.book-list-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    animation: book-card-animation 2s ease 0s forward;
+}
+
+.book-card {
+    border: solid 1px #bbb;
+    background-color: white;
+    padding: 1%;
+    flex-grow: 1;
+    flex-basis: 25%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    flex-direction: column;
+    min-height: 340px;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: 1px solid rgb(230, 230, 230);
+    min-width: 250px;
+    transition: all 0.3s ease ;
+    animation: book-card-animation;
+     animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; 
+}
+.book-card:hover{
+    -webkit-box-shadow: 0 2px 17px 0 rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 17px 0 rgba(0, 0, 0, 0.13);
+    z-index: 11;
+}
+.book-cover-container{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book-cover{
+    width: 128px;
+    height: 169px;
+}
+.book-details {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.bookTitle{
+    font-weight: 300;
+    font-size: 14px;
+    display: block;
+    height: 45px;
+    margin: 3px 0;
+    overflow: auto;
+}
+
+
+.book-author {
+    flex: 8;
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    line-height: 12px;
+    margin: 5px 0px;
+    height: 30px;
+    overflow: auto;
+}
+
+.book-pages {
+    flex: 1;
+    line-height: 2.2em;
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    line-height: 30px;
+    margin: 5px 0px;
+    text-align: center;
+}
+.hidden-flex-item {
+    content: "";
+    visibility: hidden;
+    min-height: 0px!important;
+    padding: 0!important;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
+}
+footer {
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+}
+
+/*** animation  ***/
+
+@keyframes book-card-animation {
+    0% { opacity:0%;}
+   
+    100% { opacity:100%;}
+}
+
+/*** end animation ***/
+@media (max-width: 920px) {
+    .container .book-list .book-card {
+        flex-basis: 20%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container .book-list .book-card {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+    .container .book-list .book-card {
+        flex-basis: 100%;
+    }
+}

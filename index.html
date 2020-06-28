@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/basic.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/loader.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Book finder App </h1>
+        </header>
+        <form onsubmit="event.preventDefault();">
+            <section class="search-area">
+                <div class="search-input-container">
+                    <input type="text" id="searchInput"  class="search-input" value="" placeholder="Find book ..." />
+                    <button  class="search-btn">Find</button>
+                </div>
+            </section>
+        </form>
+        <div class="main-area">
+            <div class="loader-container hide">
+                <div class="loader"></div>
+            </div>
+            <div class="result-container">
+                <div class="msg-container">
+                    <p class="msg">Hey guys!  It's time to reading. Go ahead and find your favorite books... :)</p>
+                </div>
+                <div class="book-list-container hide">
+
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p> Nima </p>
+        </footer>
+    </div>
+
+  
+    <script type="module" >
+
+        import Index from './index.js'
+        const index= new Index();
+        document.querySelector('.search-btn').addEventListener('click', index.find)
+
+    </script>
+</body>
+
+</html>
