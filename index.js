@@ -63,6 +63,16 @@
         domElement.classList.add("hide");
         domElement.classList.remove("show");
     }
+
+    /*** enable element***/
+    function setEnable(domElement){
+        domElement.disabled = false;
+    }
+
+    /*** disable element***/
+    function setDisable(domElement){
+        domElement.disabled = true;
+    }
    
     export default class Index{
       async find(){
@@ -71,8 +81,9 @@
         let messageContainer = document.querySelector(".msg-container");
         let messageElement = document.querySelector(".msg");
         let loaderContainer = document.querySelector(".loader-container");
-
+        const findButton = document.querySelector('.search-btn')
         
+        setDisable(findButton);
         showElement(loaderContainer);
         const bookFinder = new BookFinder(searchTerm, 23);
         let bookListResult = await bookFinder.findBook();
@@ -99,11 +110,15 @@
 
                 /*** hide loader ***/
                 hideElement(loaderContainer);
+
+                /*** enable find button ***/
+                setEnable(findButton)
             })
             .catch( error => {
                 hideElement(loaderContainer);
                 hideElement(bookListContainer);
                 showElement(messageContainer);
+                setEnable(findButton);
                 messageElement.innerText = `Error on create DOM element.`;
                 console.log(error);
             })  
@@ -116,6 +131,7 @@
             }else{
                 messageElement.innerText = `Please enter book title.`;
             }
+            setEnable(findButton)
         }
     }
     
