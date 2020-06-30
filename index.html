@@ -3,9 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles/basic.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/loader.css">
 </head>
 
 <body>
@@ -40,13 +37,7 @@
     </div>
 
   
-    <script type="module" >
-
-        import Index from './index.js'
-        const index= new Index();
-        document.querySelector('.search-btn').addEventListener('click', index.find)
-
-    </script>
+    <script src="./build/bundle.js"></script>
 </body>
 
 </html>

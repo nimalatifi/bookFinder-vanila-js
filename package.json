@@ -1,0 +1,19 @@
+{
+  "name": "bookfinder",
+  "version": "1.0.0",
+  "description": "a flex based book finder",
+  "main": "main.js",
+  "private": "true",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "dev": "webpack --mode=development"
+  },
+  "author": "nima latifi",
+  "license": "ISC"
+}
